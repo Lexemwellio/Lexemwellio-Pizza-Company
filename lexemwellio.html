@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lexemwellio.css">
     <title>Document</title>
 </head>
+
 <body>
- <header>
+    <header>
         <h1>Ordering Center</h1>
     </header>
 
@@ -16,26 +18,102 @@
             <ol id="options-list">
                 <li>Type</li>
                 <li>Size</li>
+                <li>Crust</li>
+                <li>Quantity</li>
                 <li>Cost</li>
             </ol>
             <!-- Add content related to type, size, and cost here -->
         </div>
         <div class="order-container">
             <ol class="order-list">
-                <li><div>pizza one
-                    <ol class="pizza">
-                        <li>type</li>
-                        <li>size</li>
-                        <li>cost</li>
-                    </ol>
-                </div></li>
-                <li>pizza type 2</li>
+                <li>
+                    <div class="pizza-container">
+                        <h3>pizza one</h3>
+                        <ol class="pizza">
+                            <li>type</li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <li>size</li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <li>crust</li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <li>quantity</li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <li>cost</li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <li><button class="add-to-cart">Add To Cart</button></li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    <div class="pizza-container">
+                        <h3>pizza two</h3>
+                        <ol class="pizza">
+                            <li>type</li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <li>size</li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <li>crust</li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <li>quantity</li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <li>cost</li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <li><button class="add-to-cart">Add To Cart</button></li>
+                        </ol>
+                    </div>
+                </li>
+                <button id="add-pizza">Add Pizza</button>
             </ol>
         </div>
     </section>
+    <div id="order-total">
+        <p>Order Total: Infinity Dollars
+        <p>
+    </div>
 
     <footer>
         <button id="place-order">Place Order</button>
     </footer>
 </body>
+
 </html>

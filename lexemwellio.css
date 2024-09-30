@@ -1,6 +1,4 @@
-:root {
-
-}
+:root {}
 
 body {
     font-family: Arial, sans-serif;
@@ -60,9 +58,43 @@ footer {
     list-style-type: none;
 }
 
+.order-container {
+    display: inline;
+}
+
 .pizza {
     list-style-type: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    padding: 1em;
     font-weight: bold;
+    align-items: center;
+}
+
+.pizza-container {
+    align-items: center;
+    border: 2px solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#add-pizza {
+    background-color: green;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    transition-duration: 0.2;
+    color: white;
+    cursor: pointer;
+}
+
+#add-pizza:hover {
+    background-color: red;
+}
+
+#order-total {
+    float: right;
+    border: 2px solid;
+    margin-right: 2em;
+    margin-top: 1em;
+    padding: 10px;
 }
