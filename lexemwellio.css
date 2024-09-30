@@ -36,6 +36,12 @@ footer {
     border: none;
     cursor: pointer;
     font-size: 16px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+#place-order:hover {
+    background-color: blue;
 }
 
 .options-container {
@@ -98,4 +104,9 @@ footer {
     margin-right: 2em;
     margin-top: 1em;
     padding: 10px;
+}
+
+#special-surprise {
+    display: none;
+    align-items: center;
 }

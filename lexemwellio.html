@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lexemwellio.css">
     <title>Document</title>
+    <script>
+        const specialSurprise = () => {
+            document.getElementById("special-surprise").style.display = "block"
+        }
+    </script>
 </head>
 
 <body>
@@ -110,9 +115,13 @@
         <p>Order Total: Infinity Dollars
         <p>
     </div>
+    <div id="special-surprise">
+        <h3>Have you seen this?</h3>
+        <img src="https://media.tenor.com/wQZdn6U1RoQAAAAM/dance-happy.gif">
+    </div>
 
     <footer>
-        <button id="place-order">Place Order</button>
+        <button id="place-order" onclick="specialSurprise()">Place Order</button>
     </footer>
 </body>
 
