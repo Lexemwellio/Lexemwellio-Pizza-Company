@@ -70,3 +70,19 @@ const addPizza = () => {
                     </div>
                 </li>`;
 }
+
+const getPizzaOptions = () => {
+  //alert('This function was called!');
+  const options = pizzaDiv.querySelector('.pizza');
+  alert('Hey');
+
+}
+
+const pizzaDiv = document.querySelector('.pizza');
+alert(pizzaDiv);
+//const selectedOptions = getPizzaOptions(pizzaDiv);
+//alert(selectedOptions);
+
+const calculatePizzaCost = () => {
+  return 0;
+}
