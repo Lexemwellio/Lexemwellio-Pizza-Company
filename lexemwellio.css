@@ -60,7 +60,7 @@ footer {
     padding: 10px;
 }
 
-.order-list {
+#order-list {
     list-style-type: none;
 }
 
@@ -68,7 +68,7 @@ footer {
     display: inline;
 }
 
-.pizza{
+.pizza {
     display: grid;
     grid-template-columns: 3fr 9fr 2fr 1fr;
     height: 8rem;
@@ -77,13 +77,14 @@ footer {
     max-width: 1000px;
 }
 
-.pizza-header{
+.pizza-header {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 1rem;
     gap: 1rem;
 }
+
 .pizza-photo {
     height: 3rem;
     width: 3rem;
@@ -94,11 +95,12 @@ footer {
 .pizza-main {
     height: 100%;
 }
+
 .pizza-options {
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     margin: 0px;
     padding: 0px;
     height: 100%;
@@ -112,7 +114,8 @@ footer {
     width: 100%;
 }
 
-.pizza-cost, .delete {
+.pizza-cost,
+.delete {
     display: flex;
     align-items: center;
     justify-content: center;

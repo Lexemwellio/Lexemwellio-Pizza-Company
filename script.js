@@ -1,33 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+const specialSurprise = () => {
+  document.getElementById("special-surprise").style.display = "block"
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="lexemwellio.css">
-    <title>Document</title>
-    <script src="script.js"></script>
-</head>
+// document.getElementById("add-pizza").addEventListener("click", () => {
 
-<body>
-    <header>
-        <h1>Ordering Center</h1>
-    </header>
-
-    <section id="ordering-center">
-        <div class="options-container">
-            <ol id="options-list">
-                <li>Type</li>
-                <li>Size</li>
-                <li>Crust</li>
-                <li>Quantity</li>
-                <li>Cost</li>
-            </ol>
-            <!-- Add content related to type, size, and cost here -->
-        </div>
-        <div class="order-container">
-            <ol id="order-list">
-                <li>
+//   document.getElementById("special-surprise").style.display = "block"
+const addPizza = () => {
+  // const li = document.createElement('li');
+  // li.appendChild(document.createTextNode(str))
+  // li.innerHTML += 'hello!';
+  // document.getElementById('order-list').appendChild(li)
+  // alert('this works')
+  // document.getElementById("special-surprise").style.display = "block"
+  const ol = document.getElementById('order-list');
+  ol.innerHTML += `<li>
                     <div class="pizza">
                         <div class="pizza-header">
                             <img class="pizza-photo" src="images/profile.jpg" alt="pizza photo">
@@ -82,23 +68,5 @@
                             </button>
                         </div>
                     </div>
-                </li>
-            </ol>
-            <button id="add-pizza" onclick="addPizza()">Add Pizza</button>
-        </div>
-    </section>
-    <div id="order-total">
-        <p>Order Total: Infinity Dollars
-        <p>
-    </div>
-    <div id="special-surprise">
-        <h3>Have you seen this?</h3>
-        <img src="https://media.tenor.com/wQZdn6U1RoQAAAAM/dance-happy.gif">
-    </div>
-
-    <footer>
-        <button id="place-order" onclick="specialSurprise()">Place Order</button>
-    </footer>
-</body>
-
-</html>
+                </li>`;
+}
