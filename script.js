@@ -13,13 +13,10 @@ const addPizza = () => {
     // alert('this works')
     // document.getElementById("special-surprise").style.display = "block"
     const ol = document.getElementById('order-list');
-    ol.innerHTML += `<li>
-                    <div class="pizza">
+    ol.innerHTML += `<li class="pizza-li">
+                    <div class="pizza-div">
                         <div class="pizza-header">
                             <img class="pizza-photo" src="images/profile.jpg" alt="pizza photo">
-                            <div class="pizza-paragraph">
-                                Yummy Pizza
-                            </div>
                         </div>
                         <div class="pizza-main">
                             <ol class="pizza-options">

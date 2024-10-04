@@ -11,29 +11,28 @@
 
 <body>
     <header>
-        <h1>Ordering Center</h1>
+        <h1>Lexemwellio's</h1>
+        <h2> Best Pizza on this side of the Mississippi</h2>
     </header>
 
     <section id="ordering-center">
         <div class="options-container">
+            <div></div>
             <ol id="options-list">
-                <li>Type</li>
-                <li>Size</li>
-                <li>Crust</li>
-                <li>Quantity</li>
-                <li>Cost</li>
+                <li class="category">Type</li>
+                <li class="category">Size</li>
+                <li class="category">Crust</li>
+                <li class="category">Quantity</li>
             </ol>
-            <!-- Add content related to type, size, and cost here -->
+            <div class="pizza-cost">Cost</div>
+            <div></div>
         </div>
         <div class="order-container">
             <ol id="order-list">
-                <li>
-                    <div class="pizza">
+                <li class="pizza-li">
+                    <div class="pizza-div">
                         <div class="pizza-header">
                             <img class="pizza-photo" src="images/profile.jpg" alt="pizza photo">
-                            <div class="pizza-paragraph">
-                                Yummy Pizza
-                            </div>
                         </div>
                         <div class="pizza-main">
                             <ol class="pizza-options">
@@ -47,10 +46,10 @@
                                 </li>
                                 <li class="option">
                                     <select class="option-select">
-                                        <option>Wee</option>
-                                        <option>Mid</option>
-                                        <option>Big</option>
-                                        <option>X-big</option>
+                                        <option data-display="Wee" value="wee">Wee    +$0</option>
+                                        <option>Mid    +$3</option>
+                                        <option>Big    +$4</option>
+                                        <option>X-big  +$5</option>
                                     </select>
                                 </li>
                                 <li class="option">
@@ -85,7 +84,14 @@
                     </div>
                 </li>
             </ol>
-            <button id="add-pizza" onclick="addPizza()">Add Pizza</button>
+            <div class="options-container">
+                <div class="pizza-header">
+                    <button id="add-pizza" class="pizza-photo button" onclick="addPizza()">Add Pizza</button>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     </section>
     <div id="order-total-container">
@@ -97,7 +103,13 @@
     </div>
 
     <footer>
-        <button id="place-order" onclick="specialSurprise()">Place Order</button>
+        <div></div>
+        <div class = "center">
+            <button id="place-order" class="button"onclick="specialSurprise()">Place Order</button>
+        </div>
+        <div id="order-total" class = "center">
+            <p>Order Total: Infinity Dollars</p>
+        </div>
     </footer>
 </body>
 
