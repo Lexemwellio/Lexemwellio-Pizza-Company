@@ -55,11 +55,12 @@
                                 </li>
                                 <li class="option">
                                     <select class="option-select">
+                                        <option>Regular</option>
                                         <option>Pretzel</option>
                                         <option>Deep Dish</option>
                                         <option>Garlic</option>
                                         <option>Cheesy</option>
-                                        <option>GF</option>
+                                        <option>Gluten-Free</option>
                                     </select>
                                 </li>
                                 <li class="option">
@@ -74,10 +75,10 @@
                             </ol>
                         </div>
                         <div class="pizza-cost">
-                            <p>Cost</p>
+                            <p class="cost-display">Cost: </p>
                         </div>
                         <div class="delete">
-                            <button class="add=to-cart" onclick="getPizzaOptions()">
+                            <button class="add=to-cart" onclick="calculatePizzaCost()">
                                 <img class="delete-photo" src="images/profile.jpg">
                             </button>
                         </div>
@@ -87,8 +88,8 @@
             <button id="add-pizza" onclick="addPizza()">Add Pizza</button>
         </div>
     </section>
-    <div id="order-total">
-        <p>Order Total: Infinity Dollars</p>
+    <div id="order-total-container">
+        <p id="order-total">Order Total: $0</p>
     </div>
     <div id="special-surprise">
         <h3>Have you seen this?</h3>
