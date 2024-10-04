@@ -13,48 +13,45 @@ const addPizza = () => {
   // alert('this works')
   // document.getElementById("special-surprise").style.display = "block"
   const ol = document.getElementById('order-list');
-  ol.innerHTML += `<li>
-                    <div class="pizza">
+  ol.innerHTML += `<li class="pizza-li">
+                    <div class="pizza-div">
                         <div class="pizza-header">
                             <img class="pizza-photo" src="images/profile.jpg" alt="pizza photo">
-                            <div class="pizza-paragraph">
-                                Yummy Pizza
-                            </div>
                         </div>
                         <div class="pizza-main">
                             <ol class="pizza-options">
                                 <li class="option">
                                     <select class="option-select">
                                         <option>Cheese</option>
-                                        <option> Pepperoni</option>
+                                        <option>Pepperoni</option>
                                         <option>Sausage</option>
-                                        <option> Hawaiian</option>
+                                        <option>Hawaiian</option>
                                     </select>
                                 </li>
                                 <li class="option">
                                     <select class="option-select">
-                                        <option>Wee</option>
-                                        <option> Mid</option>
-                                        <option>Big</option>
-                                        <option> X-big</option>
+                                        <option data-display="Wee" value="wee">Wee    +$0</option>
+                                        <option>Mid    +$3</option>
+                                        <option>Big    +$4</option>
+                                        <option>X-big  +$5</option>
                                     </select>
                                 </li>
                                 <li class="option">
                                     <select class="option-select">
                                         <option>Pretzel</option>
-                                        <option> Deep Dish</option>
+                                        <option>Deep Dish</option>
                                         <option>Garlic</option>
-                                        <option> Cheesy</option>
-                                        <option> GF</option>
+                                        <option>Cheesy</option>
+                                        <option>GF</option>
                                     </select>
                                 </li>
                                 <li class="option">
                                     <select class="option-select">
                                         <option>1</option>
-                                        <option> 2 </option>
+                                        <option>2</option>
                                         <option>3</option>
-                                        <option> 4</option>
-                                        <option> 5</option>
+                                        <option>4</option>
+                                        <option>5</option>
                                     </select>
                                 </li>
                             </ol>
@@ -63,7 +60,7 @@ const addPizza = () => {
                             <p>Cost</p>
                         </div>
                         <div class="delete">
-                            <button>
+                            <button class="add=to-cart" onclick="getPizzaOptions()">
                                 <img class="delete-photo" src="images/profile.jpg">
                             </button>
                         </div>
