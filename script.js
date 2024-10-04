@@ -14,64 +14,76 @@ const specialSurprise = () => {
 
 const addPizza = () => {
     const ol = document.getElementById('order-list');
-    ol.innerHTML += `<li class="pizza-li" data-which-pizza="0">
-                    <div class="pizza-div">
-                        <div class="pizza-header">
-                            <img class="pizza-photo" src="images/profile.jpg" alt="pizza photo">
-                        </div>
-                        <div class="pizza-main">
-                            <ol class="pizza-options">
-                                <li class="option">
-                                    <select class="option-select">
-                                        <option>Cheese</option>
-                                        <option>Pepperoni</option>
-                                        <option>Sausage</option>
-                                        <option>Hawaiian</option>
-                                    </select>
-                                </li>
-                                <li class="option">
-                                    <select class="option-select">
-                                        <option data-display="Wee" value="wee">Wee +$0</option>
-                                        <option>Mid +$3</option>
-                                        <option>Big +$4</option>
-                                        <option>X-big +$5</option>
-                                    </select>
-                                </li>
-                                <li class="option">
-                                    <select class="option-select">
-                                        <option>Regular</option>
-                                        <option>Pretzel</option>
-                                        <option>Deep Dish</option>
-                                        <option>Garlic</option>
-                                        <option>Cheesy</option>
-                                        <option>Gluten-Free</option>
-                                    </select>
-                                </li>
-                                <li class="option">
-                                    <select class="option-select">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </li>
-                            </ol>
-                        </div>
-                        <div class="pizza-cost">
-                            <p class="cost-display">Cost: </p>
-                        </div>
-                        <div class="delete">
-                            <button type="button" class="add-to-cart" data-which-button="0" onclick="calculatePizzaCost(this)">
-                                <img class="delete-photo" src="images/profile.jpg">
-                            </button>
-                        </div>
-                    </div>
-                </li>`;
-    howManyPizzas += 1;
-    document.getElementsByClassName('pizza-li')[howManyPizzas - 1].setAttribute("data-which-pizza", howManyPizzas);
-    document.getElementsByClassName('add-to-cart')[howManyPizzas - 1].setAttribute("data-which-button", howManyPizzas);
+
+    // Create a new list item element
+    const pizzaItem = document.createElement('li');
+    pizzaItem.id = `pizza-${howManyPizzas}`; // Unique ID for each pizza
+    pizzaItem.className = "pizza-li";
+    pizzaItem.innerHTML = `
+        <div class="pizza-div">
+            <div class="pizza-header">
+                <img class="pizza-photo" src="images/profile.jpg" alt="pizza photo">
+            </div>
+            <div class="pizza-main">
+                <ol class="pizza-options">
+                    <li class="option">
+                        <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
+                            <option>Cheese</option>
+                            <option>Pepperoni</option>
+                            <option>Sausage</option>
+                            <option>Hawaiian</option>
+                        </select>
+                    </li>
+                    <li class="option">
+                        <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
+                            <option value="Wee">Wee +$0</option>
+                            <option value="Mid">Mid +$3</option>
+                            <option value="Big">Big +$4</option>
+                            <option value="X-big">X-big +$5</option>
+                        </select>
+                    </li>
+                    <li class="option">
+                        <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
+                            <option>Regular</option>
+                            <option>Pretzel</option>
+                            <option>Deep Dish</option>
+                            <option>Garlic</option>
+                            <option>Cheesy</option>
+                            <option>Gluten-Free</option>
+                        </select>
+                    </li>
+                    <li class="option">
+                        <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </li>
+                </ol>
+            </div>
+            <div class="pizza-cost">
+                <p class="cost-display"></p>
+            </div>
+            <div class="delete">
+                <button type="button" class="add-to-cart" onclick="calculatePizzaCost(this.closest('.pizza-li'))">
+                    <img class="delete-photo" src="images/profile.jpg">
+                </button>
+            </div>
+        </div>
+    `;
+
+    // Append the new pizza item to the order list
+    ol.appendChild(pizzaItem);
+
+    // Calculate cost for the new pizza
+    calculatePizzaCost(pizzaItem);
+
+    // Increase the pizza count for unique IDs
+    howManyPizzas++;
 }
+
 
 // const getPizzaOptions = () => {
 // alert('This function was called!');
@@ -86,9 +98,7 @@ const addPizza = () => {
 // alert(selectedOptions);
 
 
-const calculatePizzaCost = (button) => {
-    const whichButton = parseInt(button.getAttribute("data-which-button"), 10);
-    const whichPizza = document.getElementsByClassName("pizza-li")[whichButton - 1];
+const calculatePizzaCost = (whichPizza) => {
     const options = whichPizza.querySelectorAll(".option-select");
     const costDisplay = whichPizza.querySelector(".cost-display");
 
@@ -102,11 +112,30 @@ const calculatePizzaCost = (button) => {
     const crustCost = prices.crust[crust] || 0;
     const quantityValue = prices.quantity[quantity] || 0;
 
+    //display pizza cost
     const costForThisPizza = (typeCost + sizeCost + crustCost) * quantityValue;
-    totalCost += costForThisPizza;
-    costDisplay.innerHTML = `Cost: $${costForThisPizza}`;
-    document.getElementById('order-total').innerHTML = `Order Total: $${totalCost}`;
+    costDisplay.innerHTML = `$${costForThisPizza}`;
+
+    // calculate total cost
+    const pizzaItems = document.querySelectorAll('.pizza-li'); // Select all pizza list items
+    let totalCost = 0; // Initialize total cost
+
+    pizzaItems.forEach(pizza => {
+        const costDisplay = pizza.querySelector('.cost-display'); // Find the cost display for each pizza
+        if (costDisplay) {
+            const pizzaCost = parseFloat(costDisplay.innerHTML.replace('$', '')); // Extract the cost as a float
+            totalCost += isNaN(pizzaCost) ? 0 : pizzaCost; // Add to total cost, defaulting to 0 if NaN
+        }
+    });
+
+    // Update the total cost display in the document
+    document.getElementById('order-total').innerHTML = `Order Total: $${totalCost.toFixed(2)}`;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Call your function here
+    calculatePizzaCost(document.getElementById("first-pizza"));
+});
 
 // TODO:
 // Delete button

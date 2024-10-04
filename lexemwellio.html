@@ -29,7 +29,7 @@
         </div>
         <div class="order-container">
             <ol id="order-list">
-                <li class="pizza-li" data-which-pizza="1">
+                <li id="first-pizza" class="pizza-li">
                     <div class="pizza-div">
                         <div class="pizza-header">
                             <img class="pizza-photo" src="images/profile.jpg" alt="pizza photo">
@@ -37,7 +37,7 @@
                         <div class="pizza-main">
                             <ol class="pizza-options">
                                 <li class="option">
-                                    <select class="option-select">
+                                    <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
                                         <option>Cheese</option>
                                         <option>Pepperoni</option>
                                         <option>Sausage</option>
@@ -45,15 +45,15 @@
                                     </select>
                                 </li>
                                 <li class="option">
-                                    <select class="option-select">
-                                        <option data-display="Wee" value="wee">Wee +$0</option>
+                                    <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
+                                        <option display="Wee" value="wee">Wee +$0</option>
                                         <option>Mid +$3</option>
                                         <option>Big +$4</option>
                                         <option>X-big +$5</option>
                                     </select>
                                 </li>
                                 <li class="option">
-                                    <select class="option-select">
+                                    <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
                                         <option>Regular</option>
                                         <option>Pretzel</option>
                                         <option>Deep Dish</option>
@@ -63,7 +63,7 @@
                                     </select>
                                 </li>
                                 <li class="option">
-                                    <select class="option-select">
+                                    <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -74,11 +74,11 @@
                             </ol>
                         </div>
                         <div class="pizza-cost">
-                            <p class="cost-display">Cost: </p>
+                            <p class="cost-display"></p>
                         </div>
                         <div class="delete">
-                            <button type="button" class="add-to-cart" data-which-button="1"
-                                onclick="calculatePizzaCost(this)">
+                            <button type="button" class="add-to-cart"
+                                onclick="">
                                 <img class="delete-photo" src="images/profile.jpg">
                             </button>
                         </div>
