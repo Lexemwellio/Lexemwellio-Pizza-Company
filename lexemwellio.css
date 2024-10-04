@@ -1,13 +1,13 @@
 :root {
-    --primary-color:#f5f5f5 ;
+    --primary-color: #f5f5f5;
     --second-color: #ff5a5f;
     --second-color-dark: red;
     --third-color: #087e8b;
-    --third-color-dark: #0f3a3f; 
+    --third-color-dark: #0f3a3f;
     --text-color: #0f3a3f;
 }
 
-*{
+* {
     /* border:1px solid green */
 }
 
@@ -32,16 +32,19 @@ header {
     text-align: center;
 }
 
-h1,h2 {
-    padding:0px;
-    margin:0px
+h1,
+h2 {
+    padding: 0px;
+    margin: 0px
 }
+
 h1 {
     font-size: 3rem;
 }
+
 h2 {
     font-size: 1rem;
-    color:var(--third-color-dark);
+    color: var(--third-color-dark);
 }
 
 #ordering-center {
@@ -52,13 +55,14 @@ h2 {
     padding: 0px;
     margin: 0px;
     list-style-type: none;
-    max-height: 21rem; 
-    overflow-y: auto;  
+    max-height: 21rem;
+    overflow-y: auto;
     border-top: 2px solid var(--third-color);
     border-bottom: 2px solid var(--third-color);
 }
 
-.pizza-div, .options-container {
+.pizza-div,
+.options-container {
     display: grid;
     grid-template-columns: 2fr 9fr 1fr 1fr;
 }
@@ -70,7 +74,8 @@ h2 {
 .pizza-header {
     display: flex;
     align-items: center;
-    justify-content: center;}
+    justify-content: center;
+}
 
 .pizza-photo {
     height: 5rem;
@@ -85,7 +90,8 @@ h2 {
     width: 100%;
 }
 
-.pizza-options, #options-list {
+.pizza-options,
+#options-list {
     list-style: none;
     display: flex;
     align-items: center;
@@ -94,10 +100,13 @@ h2 {
     padding: 0px;
     height: 100%;
 }
+
 .category {
     text-align: center;
 }
-.option-select, .category {
+
+.option-select,
+.category {
     min-width: 6rem;
 }
 
@@ -114,7 +123,7 @@ select:hover {
 }
 
 .pizza-cost,
-.delete  {
+.delete {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,11 +152,11 @@ select:hover {
 }
 
 #add-pizza {
-  width: 5.5rem;
+    width: 5.5rem;
 }
 
 
-#order-total {
+#order-total-container {
     float: right;
     margin-right: 2rem;
     margin-top: 1rem;

@@ -1,19 +1,20 @@
+let howManyPizzas = 1;
+let totalCost = 0;
+
+const prices = {
+    type: { 'Cheese': 8, 'Pepperoni': 9, 'Sausage': 10, 'Hawaiian': 11 },
+    size: { 'Wee': 0, 'Mid': 1, 'Big': 2, 'X-big': 3 },
+    crust: { 'Regular': 0, 'Pretzel': 1, 'Deep Dish': 2, 'Garlic': 1, 'Cheesy': 2, 'Gluten-Free': 0 },
+    quantity: { '1': 1, '2': 2, '3': 3, '4': 4, '5': 5 }
+};
+
 const specialSurprise = () => {
     document.getElementById("special-surprise").style.display = "block"
 }
 
-// document.getElementById("add-pizza").addEventListener("click", () => {
-
-//   document.getElementById("special-surprise").style.display = "block"
 const addPizza = () => {
-    // const li = document.createElement('li');
-    // li.appendChild(document.createTextNode(str))
-    // li.innerHTML += 'hello!';
-    // document.getElementById('order-list').appendChild(li)
-    // alert('this works')
-    // document.getElementById("special-surprise").style.display = "block"
     const ol = document.getElementById('order-list');
-    ol.innerHTML += `<li class="pizza-li">
+    ol.innerHTML += `<li class="pizza-li" data-which-pizza="0">
                     <div class="pizza-div">
                         <div class="pizza-header">
                             <img class="pizza-photo" src="images/profile.jpg" alt="pizza photo">
@@ -30,10 +31,10 @@ const addPizza = () => {
                                 </li>
                                 <li class="option">
                                     <select class="option-select">
-                                        <option>Wee</option>
-                                        <option>Mid</option>
-                                        <option>Big</option>
-                                        <option>X-big</option>
+                                        <option data-display="Wee" value="wee">Wee +$0</option>
+                                        <option>Mid +$3</option>
+                                        <option>Big +$4</option>
+                                        <option>X-big +$5</option>
                                     </select>
                                 </li>
                                 <li class="option">
@@ -58,15 +59,18 @@ const addPizza = () => {
                             </ol>
                         </div>
                         <div class="pizza-cost">
-                            <p class="cost-display">Cost: $0</p>
+                            <p class="cost-display">Cost: </p>
                         </div>
                         <div class="delete">
-                            <button class='add-to-cart' onclick=calculatePizzaCost()>
+                            <button type="button" class="add-to-cart" data-which-button="0" onclick="calculatePizzaCost(this)">
                                 <img class="delete-photo" src="images/profile.jpg">
                             </button>
                         </div>
                     </div>
                 </li>`;
+    howManyPizzas += 1;
+    document.getElementsByClassName('pizza-li')[howManyPizzas - 1].setAttribute("data-which-pizza", howManyPizzas);
+    document.getElementsByClassName('add-to-cart')[howManyPizzas - 1].setAttribute("data-which-button", howManyPizzas);
 }
 
 // const getPizzaOptions = () => {
@@ -81,20 +85,13 @@ const addPizza = () => {
 // const selectedOptions = getPizzaOptions(pizzaDiv);
 // alert(selectedOptions);
 
-const options = document.getElementsByClassName('option-select');
-const costDisplay = document.getElementsByClassName('cost-display');
-const totalCostDisplay = document.getElementById('order-total');
-let totalCost = 0;
 
-const prices = {
-    type: { 'Cheese': 8, 'Pepperoni': 9, 'Sausage': 10, 'Hawaiian': 11 },
-    size: { 'Wee': 0, 'Mid': 1, 'Big': 2, 'X-big': 3 },
-    crust: { 'Regular': 0, 'Pretzel': 1, 'Deep Dish': 2, 'Garlic': 1, 'Cheesy': 2, 'Gluten-Free': 0 },
-    quantity: { '1': 1, '2': 2, '3': 3, '4': 4, '5': 5 }
-};
+const calculatePizzaCost = (button) => {
+    const whichButton = parseInt(button.getAttribute("data-which-button"), 10);
+    const whichPizza = document.getElementsByClassName("pizza-li")[whichButton - 1];
+    const options = whichPizza.querySelectorAll(".option-select");
+    const costDisplay = whichPizza.querySelector(".cost-display");
 
-const calculatePizzaCost = () => {
-    alert(totalCostDisplay.innerHTML());
     const type = options[0].value.trim();
     const size = options[1].value.trim();
     const crust = options[2].value.trim();
@@ -107,8 +104,12 @@ const calculatePizzaCost = () => {
 
     const costForThisPizza = (typeCost + sizeCost + crustCost) * quantityValue;
     totalCost += costForThisPizza;
-    costDisplay[0].innerHTML = `Cost: $${costForThisPizza}`;
-    totalCostDisplay.innerHTML = `Order Total: Dancing Baby GIF`;
+    costDisplay.innerHTML = `Cost: $${costForThisPizza}`;
+    document.getElementById('order-total').innerHTML = `Order Total: $${totalCost}`;
 }
 
-// We need a way to delete pizzas!
+// TODO:
+// Delete button
+// Change calculatePizzaCost to be called when a selector is changed(?)
+// add-to-cart would only add the total cost to the total.
+// sadly, change the pictures

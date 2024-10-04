@@ -29,7 +29,7 @@
         </div>
         <div class="order-container">
             <ol id="order-list">
-                <li class="pizza-li">
+                <li class="pizza-li" data-which-pizza="1">
                     <div class="pizza-div">
                         <div class="pizza-header">
                             <img class="pizza-photo" src="images/profile.jpg" alt="pizza photo">
@@ -46,10 +46,10 @@
                                 </li>
                                 <li class="option">
                                     <select class="option-select">
-                                        <option data-display="Wee" value="wee">Wee    +$0</option>
-                                        <option>Mid    +$3</option>
-                                        <option>Big    +$4</option>
-                                        <option>X-big  +$5</option>
+                                        <option data-display="Wee" value="wee">Wee +$0</option>
+                                        <option>Mid +$3</option>
+                                        <option>Big +$4</option>
+                                        <option>X-big +$5</option>
                                     </select>
                                 </li>
                                 <li class="option">
@@ -77,7 +77,8 @@
                             <p class="cost-display">Cost: </p>
                         </div>
                         <div class="delete">
-                            <button class="add=to-cart" onclick="calculatePizzaCost()">
+                            <button type="button" class="add-to-cart" data-which-button="1"
+                                onclick="calculatePizzaCost(this)">
                                 <img class="delete-photo" src="images/profile.jpg">
                             </button>
                         </div>
@@ -86,7 +87,8 @@
             </ol>
             <div class="options-container">
                 <div class="pizza-header">
-                    <button id="add-pizza" class="pizza-photo button" onclick="addPizza()">Add Pizza</button>
+                    <button type="button" id="add-pizza" class="pizza-photo button" onclick="addPizza()">Add
+                        Pizza</button>
                 </div>
                 <div></div>
                 <div></div>
@@ -104,13 +106,10 @@
 
     <footer>
         <div></div>
-        <div class = "center">
-            <button id="place-order" class="button"onclick="specialSurprise()">Place Order</button>
+        <div class="center">
+            <button id="place-order" type="button" class="button" onclick="specialSurprise()">Place Order</button>
         </div>
-        <div id="order-total" class = "center">
-            <p>Order Total: Infinity Dollars</p>
-        </div>
-    </footer>
-</body>
+        <!--<div id="order-total-container" class="center">
+            <p id="order-total">Order Total: $0</p>-->
 
 </html>
