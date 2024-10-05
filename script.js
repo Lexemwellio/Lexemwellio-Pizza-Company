@@ -68,12 +68,23 @@ const addPizza = () => {
                 <p class="cost-display"></p>
             </div>
             <div class="delete">
-                <button type="button" class="add-to-cart" onclick="calculatePizzaCost(this.closest('.pizza-li'))">
-                    <img class="delete-photo" src="images/profile.jpg">
-                </button>
+                
             </div>
         </div>
     `;
+    
+    // delete pizza
+    const deleter = document.createElement("button");
+    deleter.setAttribute("class", "trash");
+    deleter.textContent = "trash"; // placeholder text
+    deleter.addEventListener("click", function() { 
+        ol.removeChild(pizzaItem);
+        calculatePizzaCost(pizzaItem);
+    });
+    
+    // Append the deleter button to the .delete div inside the pizzaItem
+    const deleteDiv = pizzaItem.querySelector('.delete');
+    deleteDiv.appendChild(deleter);
 
     // Append the new pizza item to the order list
     ol.appendChild(pizzaItem);
@@ -84,6 +95,7 @@ const addPizza = () => {
     // Increase the pizza count for unique IDs
     howManyPizzas++;
 }
+
 
 const calculatePizzaCost = (whichPizza) => {
     const options = whichPizza.querySelectorAll(".option-select");
@@ -99,14 +111,14 @@ const calculatePizzaCost = (whichPizza) => {
     const crustCost = prices.crust[crust] || 0;
     const quantityValue = prices.quantity[quantity] || 0;
 
-    //display pizza cost
+    // display pizza cost
     const costForThisPizza = (typeCost + sizeCost + crustCost) * quantityValue;
     whichPizza.setAttribute("data-cost", costForThisPizza);
     costDisplay.innerHTML = `$${costForThisPizza}`;
 
     // calculate total cost
     const pizzaItems = document.querySelectorAll('.pizza-li'); // Select all pizza list items
-    let totalCost = 0; // Initialize total cost
+    totalCost = 0; // Initialize total cost
 
     pizzaItems.forEach(pizza => {
         const costDisplay = pizza.querySelector('.cost-display'); // Find the cost display for each pizza
@@ -122,8 +134,19 @@ const calculatePizzaCost = (whichPizza) => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Call your function here
-    calculatePizzaCost(document.getElementById("first-pizza"));
+    pizza = document.getElementById("first-pizza");
+    calculatePizzaCost(pizza);
+
+    // delete pizza
+    const deleter = document.createElement("button");
+    deleter.setAttribute("class", "trash");
+    deleter.textContent = "trash"; // placeholder text
+    deleter.addEventListener("click", function() { 
+        document.getElementById("order-list").removeChild(pizza);
+        calculatePizzaCost(pizza);
+    });
+    const deleteDiv = pizza.querySelector('.delete');
+    deleteDiv.appendChild(deleter); 
 });
 
 const updatePizzaPhoto = (whichPizza) => {
