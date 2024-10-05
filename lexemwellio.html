@@ -32,20 +32,23 @@
                 <li id="first-pizza" class="pizza-li">
                     <div class="pizza-div">
                         <div class="pizza-header">
-                            <img class="pizza-photo" src="images/profile.jpg" alt="pizza photo">
+                            <img class="pizza-photo" src="https://i3.ytimg.com/vi/MIyY8iAEvZ8/maxresdefault.jpg"
+                                alt="cheese pizza photo">
                         </div>
                         <div class="pizza-main">
                             <ol class="pizza-options">
                                 <li class="option">
-                                    <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
-                                        <option>Cheese</option>
-                                        <option>Pepperoni</option>
-                                        <option>Sausage</option>
-                                        <option>Hawaiian</option>
+                                    <select class="option-select"
+                                        onchange="calculatePizzaCost(this.closest('.pizza-li')); updatePizzaPhoto(this.closest('.pizza-li'));">
+                                        <option>Cheese $8</option>
+                                        <option>Pepperoni $9</option>
+                                        <option>Sausage $10</option>
+                                        <option>Hawaiian $11</option>
                                     </select>
                                 </li>
                                 <li class="option">
-                                    <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
+                                    <select class="option-select"
+                                        onchange="calculatePizzaCost(this.closest('.pizza-li'))">
                                         <option display="Wee" value="wee">Wee +$0</option>
                                         <option>Mid +$3</option>
                                         <option>Big +$4</option>
@@ -53,17 +56,19 @@
                                     </select>
                                 </li>
                                 <li class="option">
-                                    <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
-                                        <option>Regular</option>
-                                        <option>Pretzel</option>
-                                        <option>Deep Dish</option>
-                                        <option>Garlic</option>
-                                        <option>Cheesy</option>
-                                        <option>Gluten-Free</option>
+                                    <select class="option-select"
+                                        onchange="calculatePizzaCost(this.closest('.pizza-li'))">
+                                        <option>Regular +$0</option>
+                                        <option>Pretzel +$1</option>
+                                        <option>Deep Dish +$2</option>
+                                        <option>Garlic +$1</option>
+                                        <option>Cheesy +$2</option>
+                                        <option>Gluten-Free +$0</option>
                                     </select>
                                 </li>
                                 <li class="option">
-                                    <select class="option-select" onchange="calculatePizzaCost(this.closest('.pizza-li'))">
+                                    <select class="option-select"
+                                        onchange="calculatePizzaCost(this.closest('.pizza-li'))">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -77,8 +82,7 @@
                             <p class="cost-display"></p>
                         </div>
                         <div class="delete">
-                            <button type="button" class="add-to-cart"
-                                onclick="">
+                            <button type="button" class="add-to-cart" onclick="updateTotalCost()">
                                 <img class="delete-photo" src="images/profile.jpg">
                             </button>
                         </div>
