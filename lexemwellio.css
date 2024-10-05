@@ -55,7 +55,7 @@ h2 {
     padding: 0px;
     margin: 0px;
     list-style-type: none;
-    max-height: 21rem;
+    max-height: 35rem;
     overflow-y: auto;
     border-top: 2px solid var(--third-color);
     border-bottom: 2px solid var(--third-color);
@@ -165,7 +165,8 @@ select:hover {
 
 #special-surprise {
     display: none;
-    align-items: center;
+    margin: 0 auto;
+    text-align: center;
 }
 
 

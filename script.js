@@ -68,20 +68,20 @@ const addPizza = () => {
                 <p class="cost-display"></p>
             </div>
             <div class="delete">
-                
+
             </div>
         </div>
     `;
-    
+
     // delete pizza
     const deleter = document.createElement("button");
     deleter.setAttribute("class", "trash");
-    deleter.textContent = "trash"; // placeholder text
-    deleter.addEventListener("click", function() { 
+    deleter.innerHTML = '<i class="fas fa-trash">';
+    deleter.addEventListener("click", function () {
         ol.removeChild(pizzaItem);
         calculatePizzaCost(pizzaItem);
     });
-    
+
     // Append the deleter button to the .delete div inside the pizzaItem
     const deleteDiv = pizzaItem.querySelector('.delete');
     deleteDiv.appendChild(deleter);
@@ -129,6 +129,7 @@ const calculatePizzaCost = (whichPizza) => {
     });
 
     // Update the total cost display in the document
+    document.getElementById('order-total').setAttribute("data-total-cost", totalCost);
     document.getElementById('order-total').innerHTML = `Order Total: $${totalCost.toFixed(2)}`;
 }
 
@@ -140,13 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // delete pizza
     const deleter = document.createElement("button");
     deleter.setAttribute("class", "trash");
-    deleter.textContent = "trash"; // placeholder text
-    deleter.addEventListener("click", function() { 
+    deleter.innerHTML = '<i class="fas fa-trash" color="var(--second-color)">'
+    deleter.addEventListener("click", function () {
         document.getElementById("order-list").removeChild(pizza);
         calculatePizzaCost(pizza);
     });
     const deleteDiv = pizza.querySelector('.delete');
-    deleteDiv.appendChild(deleter); 
+    deleteDiv.appendChild(deleter);
 });
 
 const updatePizzaPhoto = (whichPizza) => {
