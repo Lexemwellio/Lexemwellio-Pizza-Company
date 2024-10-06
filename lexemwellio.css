@@ -20,7 +20,8 @@ body {
     background-color: var(--primary-color);
     font-family: Arial, sans-serif;
     padding: 0px;
-    margin: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 header {
@@ -93,9 +94,9 @@ h2 {
     border: 3px solid var(--second-color)
 }
 
-/* .pizza-photo:hover {
-    transform: scale(1.4);
-} */
+.pizza-photo:hover {
+    transform: scale(2);
+}
 
 .pizza-li {
     border-bottom: 2px solid var(--third-color);
