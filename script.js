@@ -92,6 +92,9 @@ const addPizza = () => {
     // Calculate cost for the new pizza
     calculatePizzaCost(pizzaItem);
 
+    // Scroll to the bottom to show most recent pizza addition
+    ol.scrollTop = ol.scrollHeight;
+
     // Increase the pizza count for unique IDs
     howManyPizzas++;
 }
@@ -168,9 +171,3 @@ const updatePizzaPhoto = (whichPizza) => {
     }
 
 }
-
-// TODO:
-// Delete button
-// Change calculatePizzaCost to be called when a selector is changed(?)
-// add-to-cart would only add the total cost to the total.
-// sadly, change the pictures

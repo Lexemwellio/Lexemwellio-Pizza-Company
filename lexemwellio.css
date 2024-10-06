@@ -1,6 +1,7 @@
 :root {
-    --primary-color: #f5f5f5;
-    --second-color: #ff5a5f;
+    --primary-color: #fffbd1;
+    --second-background: rgba(218, 218, 218, 0.663);
+    --second-color: #ff5900;
     --second-color-dark: red;
     --third-color: #087e8b;
     --third-color-dark: #0f3a3f;
@@ -39,11 +40,12 @@ h2 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 h2 {
     font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
     color: var(--third-color-dark);
 }
 
@@ -59,12 +61,18 @@ h2 {
     overflow-y: auto;
     border-top: 2px solid var(--third-color);
     border-bottom: 2px solid var(--third-color);
+    background-color: var(--second-background);
 }
 
 .pizza-div,
 .options-container {
     display: grid;
     grid-template-columns: 2fr 9fr 1fr 1fr;
+}
+
+.options-container-bottom {
+    display: flex;
+    justify-content: space-between;
 }
 
 .pizza-div {
@@ -84,6 +92,10 @@ h2 {
     border-radius: .5rem;
     border: 3px solid var(--second-color)
 }
+
+/* .pizza-photo:hover {
+    transform: scale(1.4);
+} */
 
 .pizza-li {
     border-bottom: 2px solid var(--third-color);
@@ -129,6 +141,10 @@ select:hover {
     justify-content: center;
 }
 
+i {
+    color: var(--second-color-dark);
+}
+
 .delete-photo {
     width: 1rem;
     height: 1rem;
@@ -161,6 +177,7 @@ select:hover {
     margin-right: 2rem;
     margin-top: 1rem;
     padding: 10px;
+    font-weight: bold;
 }
 
 #special-surprise {
