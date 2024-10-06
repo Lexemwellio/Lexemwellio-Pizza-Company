@@ -9,7 +9,9 @@ const prices = {
 };
 
 const specialSurprise = () => {
-    document.getElementById("special-surprise").style.display = "block"
+    const baby = document.getElementById("special-surprise")
+    baby.style.display === "block" ? baby.style.display="none" : baby.style.display="block";
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 const addPizza = () => {
