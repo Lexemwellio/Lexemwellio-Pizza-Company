@@ -1,10 +1,19 @@
 # Lexemwellio's Pizza Company
 
-Authors:
+Authors:  Lexi Sharp, Noelle Haviland, Emma Wang  
 
-Lexi # (has29)
-Noelle Haviland (neh8)
-Emma Wang (ejw38)
+A pizza-selling website originally created as a class assignment for CS336 (web development) at Calvin University.  
+
+The following learning objectives were achieved:
+* Design a useful layout -- write correct HTML for a page with paragraphs, line breaks, images, links/anchors, title, and lists
+* Practice CSS -- use the CSS Box model to finely tune the layout of elements, including using different units thoughtfully
+* Practice JS --
+  * write modern JavaScript code using variables defined only with **const** and **let**
+  * define functions, including anonymous functions, using the fat arrow format
+  * use functions as first-order objects for callbacks
+  * write functional code using map, filter, reduce, etc.
+  * correctly use new/unusual control structures, such as short-circuiting && and the ternary operator, and object and list destructuring
+  * alter the DOM to add elements, change attributes, add/remove class names, etc.
 
 This website doesn't have a cart to add items to, because every pizza added is already "in the cart", and the total price is tallied!
 Each pizza's options are already out in the open (and readily changeable!), so there was no need to add an extraneous description.
